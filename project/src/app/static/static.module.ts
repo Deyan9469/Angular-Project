@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
-import { StaticRouterRoutingModule } from './static-router-routing.module';
+import { StaticRouterRoutingModule } from './static-routing.module';
 
 
 
@@ -16,6 +16,7 @@ import { StaticRouterRoutingModule } from './static-router-routing.module';
     CommonModule,
     RouterModule,
     StaticRouterRoutingModule,
-  ]
+  ],
+  
 })
 export class StaticModule { }

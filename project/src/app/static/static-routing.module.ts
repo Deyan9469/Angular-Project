@@ -5,7 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'contanct', component: ContactComponent },
+  { path: 'contacts', component: ContactComponent },
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

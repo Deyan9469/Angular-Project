@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { CardModule } from './card/card.module';
 import { CommentComponent } from './comment/comment.component';
 import { UserModule } from './user/user.module';
+import { StaticModule } from './static/static.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { UserModule } from './user/user.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    StaticModule,
     CoreModule,
     UserModule,
     CardModule,
