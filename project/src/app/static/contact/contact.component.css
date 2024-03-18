@@ -1,0 +1,15 @@
+.contactsPage{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 1em;
+    margin: 1em;
+}
+
+li{
+    margin: 1em 0;
+}
+a{
+    text-decoration: none;
+}
