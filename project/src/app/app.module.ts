@@ -11,12 +11,14 @@ import { CardModule } from './card/card.module';
 import { CommentComponent } from './comment/comment.component';
 import { UserModule } from './user/user.module';
 import { StaticModule } from './static/static.module';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CommentComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
