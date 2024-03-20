@@ -3,8 +3,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
-    padding: 1em;
-    margin: 1em;
+    padding: 100px;
+    margin: 100px 0px;
 }
 
 li{
