@@ -12,6 +12,7 @@ import { CommentComponent } from './comment/comment.component';
 import { UserModule } from './user/user.module';
 import { StaticModule } from './static/static.module';
 import { EditComponent } from './edit/edit.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EditComponent } from './edit/edit.component';
     HeaderComponent,
     CommentComponent,
     EditComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
