@@ -28,6 +28,8 @@ export class UserService implements OnDestroy {
   }
 
   login(email: string, password: string) {
+
+
     return this.http
       .post<User>(`${this.API_USER}/login`, { email, password })
       .pipe(tap((user) => this.user$$.next(user)));
@@ -44,8 +46,9 @@ export class UserService implements OnDestroy {
   }
 
   logout() {
+
     return this.http
-      .post<User>('/api/logout', {})
+      .get<User>(`${this.API_USER}/logout`, {})
       .pipe(tap(() => this.user$$.next(undefined)));
   }
 

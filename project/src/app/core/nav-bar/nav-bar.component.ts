@@ -21,10 +21,10 @@ export class NavBarComponent {
   logout(): void {
     this.userService.logout().subscribe({
       next: () => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       },
       error: () => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       },
     });
   }
