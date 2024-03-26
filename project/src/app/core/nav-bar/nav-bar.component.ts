@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
 
 @Component({
@@ -19,13 +19,6 @@ export class NavBarComponent {
   }
 
   logout(): void {
-    this.userService.logout().subscribe({
-      next: () => {
-        this.router.navigate(['/']);
-      },
-      error: () => {
-        this.router.navigate(['/']);
-      },
-    });
+    this.userService.logout()
   }
 }

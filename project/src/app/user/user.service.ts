@@ -1,38 +1,44 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, Subscription, tap } from 'rxjs';
+import { BehaviorSubject, Subscription, map, tap } from 'rxjs';
 import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService implements OnDestroy {
   API_USER = 'http://localhost:3030/users'; // /user/register - post , /user/login - post, /user/logout - get
-
-  private user$$ = new BehaviorSubject<User | undefined>(undefined);
-  public user$ = this.user$$.asObservable();
-
+  
+  private user$$ = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
+  private user$ = this.user$$.asObservable();
+  
   user: User | undefined;
   USER_KEY = '[user]';
-
+  
+  userSubscription: Subscription;
+  
   get isLogged(): boolean {
     return !!this.user;
   }
-
-  subscription: Subscription;
-
-  constructor(private http: HttpClient) {
-    this.subscription = this.user$.subscribe((user) => {
+  
+  constructor(private http: HttpClient, private router: Router) {
+    this.userSubscription = this.user$.subscribe((user) => {
       this.user = user;
     });
+
+
   }
 
   login(email: string, password: string) {
 
-
     return this.http
       .post<User>(`${this.API_USER}/login`, { email, password })
-      .pipe(tap((user) => this.user$$.next(user)));
+      .pipe(map((user) => {
+        localStorage.setItem('user', JSON.stringify(user));
+        this.user$$.next(user);
+        return user;
+      }));
   }
 
   register(email: string, password: string, rePassword: string) {
@@ -46,14 +52,19 @@ export class UserService implements OnDestroy {
   }
 
   logout() {
+    localStorage.removeItem('user');
+    this.user$$.next(null);
+    this.router.navigate(['/login']);
+  }
 
+  getUserInfo() {
     return this.http
-      .get<User>(`${this.API_USER}/logout`, {})
-      .pipe(tap(() => this.user$$.next(undefined)));
+      .get<User>(`${this.API_USER}/${this.user?.email}`)
+      .pipe(tap((user) => this.user$$.next(user)));
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
 
+    
   }
 }

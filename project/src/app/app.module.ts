@@ -13,6 +13,7 @@ import { UserModule } from './user/user.module';
 import { StaticModule } from './static/static.module';
 import { EditComponent } from './edit/edit.component';
 import { CreateComponent } from './create/create.component';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CreateComponent } from './create/create.component';
     CommentComponent,
     EditComponent,
     CreateComponent,
+    AuthenticateComponent,
   ],
   imports: [
     BrowserModule,
