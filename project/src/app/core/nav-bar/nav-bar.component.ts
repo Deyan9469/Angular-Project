@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/types/user';
 import { UserService } from 'src/app/user/user.service';
 
 @Component({
@@ -8,15 +9,20 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
-  constructor(private userService: UserService, private router: Router) { }
+  
+  user? : User | null;
+
+  constructor(private userService: UserService, private router: Router) { 
+
+    const user = this.userService.user$.subscribe(x => this.user = x )
+  }
+
 
   get isLoggedIn(): boolean {
-    return this.userService.isLogged;
+    return !!this.user
   }
 
-  get username(): string {
-    return this.userService.user?.username || ''; 
-  }
+
 
   logout(): void {
     this.userService.logout()

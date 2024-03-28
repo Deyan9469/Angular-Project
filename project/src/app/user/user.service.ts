@@ -1,5 +1,5 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, Subscription, map, tap } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subscription, map, tap } from 'rxjs';
 import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -7,28 +7,20 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService implements OnDestroy {
+export class UserService {
   API_USER = 'http://localhost:3030/users'; // /user/register - post , /user/login - post, /user/logout - get
-  
-  private user$$ = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
-  private user$ = this.user$$.asObservable();
-  
-  user: User | undefined;
-  USER_KEY = '[user]';
-  
-  userSubscription: Subscription;
-  
-  get isLogged(): boolean {
-    return !!this.user;
-  }
-  
+
+  private user$$: BehaviorSubject<User | null>;
+  public user$: Observable<User | null>;
+
+
+
   constructor(private http: HttpClient, private router: Router) {
-    this.userSubscription = this.user$.subscribe((user) => {
-      this.user = user;
-    });
-
+    this.user$$ = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
+    this.user$ = this.user$$.asObservable();
 
   }
+
 
   login(email: string, password: string) {
 
@@ -41,14 +33,18 @@ export class UserService implements OnDestroy {
       }));
   }
 
-  register(email: string, password: string, rePassword: string) {
+  register(email: string, username: string, password: string) {
     return this.http
       .post<User>(`${this.API_USER}/register`, {
         email,
+        username,
         password,
-        rePassword,
       })
-      .pipe(tap((user) => this.user$$.next(user)));
+      .pipe(map((user) => {
+        localStorage.setItem('user', JSON.stringify(user));
+        this.user$$.next(user);
+        return user;
+      }));
   }
 
   logout() {
@@ -58,13 +54,10 @@ export class UserService implements OnDestroy {
   }
 
   getUserInfo() {
+    const user = this.user$$.value;
     return this.http
-      .get<User>(`${this.API_USER}/${this.user?.email}`)
+      .get<User>(`${this.API_USER}/${user?.username}`)
       .pipe(tap((user) => this.user$$.next(user)));
   }
 
-  ngOnDestroy(): void {
-
-    
-  }
 }
