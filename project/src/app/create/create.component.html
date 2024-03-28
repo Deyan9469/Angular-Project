@@ -1,1 +1,24 @@
-<p>create works!</p>
+<section id="create-page" class="auth">
+    <form id="create" #form="ngForm" (ngSubmit)="addPost(form)">
+        <div class="card-container">
+            <h1>Create your post</h1>
+            <label for="Title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter title..." ngModel #inputTitle="ngModel"
+                required />
+
+            <label for="aritst">Aritst</label>
+            <input type="text" id="aritst" name="aritst" placeholder="Enter aritst..." ngModel #inputArtits="ngModel"
+                required />
+
+            <label for="imageUrl">Image Url</label>
+            <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter imageUrl" ngModel
+                #inputImageUrl="ngModel" required />
+
+            <label for="description">Description</label>
+            <textarea type="text" id="description" name="description" placeholder="description..." ngModel
+                #inputDescription="ngModel" required ></textarea>
+
+            <input class="btn submit" type="submit" value="Create Post" />
+        </div>
+    </form>
+</section>

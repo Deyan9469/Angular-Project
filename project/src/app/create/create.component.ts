@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -7,4 +10,20 @@ import { Component } from '@angular/core';
 })
 export class CreateComponent {
 
+  constructor(private apiService: ApiService, private router: Router) { }
+
+  addPost(form: NgForm): void {
+    if (form.invalid) {
+      return;
+    }
+    const {title, artist, imageUrl, description} = form.value;
+
+    
+  }
+
+
+
 }
+
+
+

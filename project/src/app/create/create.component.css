@@ -1,0 +1,14 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 30px;
+}
+input.btn.submit {
+    border: 1px solid;
+    margin: 0.5em 0;
+}
+.card-container input {
+    margin: 0.2em 0;
+}
