@@ -18,7 +18,10 @@ export class CreateComponent {
     }
     const {title, artist, imageUrl, description} = form.value;
 
-    
+    this.apiService.createPost(title, artist, imageUrl, description).subscribe(()=>{
+      this.router.navigate(['/'])
+    })
+
   }
 
 
