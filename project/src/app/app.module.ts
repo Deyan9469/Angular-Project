@@ -14,6 +14,7 @@ import { StaticModule } from './static/static.module';
 import { EditComponent } from './edit/edit.component';
 import { CreateComponent } from './create/create.component';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     StaticModule,
     CoreModule,
     UserModule,
