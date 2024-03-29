@@ -1394,15 +1394,6 @@
             }
         },
         art: {
-            "3564027f-adcd-4425-b2c0-1253d2386c0c": {
-                ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                title: "Colors",
-                aritst: "Nancy Mills",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ex quod similique porro eum repellat vitae sed odio nulla quia!",
-                likes: [],
-                imageUrl: "https://res.cloudinary.com/dvyb9owk9/image/upload/v1710342718/Angular%20project/cuwtbsmio4lszwooflsw.jpg",
-                _id: "3564027f-adcd-4425-b2c0-1253d2386c0c"
-            },
             "c64db398-91cd-487c-b900-86058c0422f8": {
                 ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 title: "African Water Bearers",
