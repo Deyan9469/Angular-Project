@@ -15,12 +15,13 @@ export class ApiService {
     return this.http.get<Art[]>(this.API_ART);
   }
 
-  getOneArt(_id:string) {
+  getOneArt(_id: string) {
     return this.http.get<Art>(`${this.API_ART}/${_id}`);
 
   }
 
   createPost(title: string, artist: string, imageUrl: string, description: string) {
-    return this.http.post<Art>(this.API_ART, { title, artist, imageUrl, description });
+    const payload = { title, artist, imageUrl, description }
+    return this.http.post<Art>(this.API_ART, payload);
   }
 }
