@@ -12,10 +12,11 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getAllArt() {
-
+    return this.http.get<Art[]>(this.API_ART);
   }
 
-  getOneArt() {
+  getOneArt(_id:string) {
+    return this.http.get<Art>(`${this.API_ART}/${_id}`);
 
   }
 
