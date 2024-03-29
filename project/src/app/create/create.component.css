@@ -3,7 +3,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
-    margin: 30px;
+    padding: 70px;
+    margin: 70px 0px;
 }
 input.btn.submit {
     border: 1px solid;
