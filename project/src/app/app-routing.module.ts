@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'', pathMatch:'full', component: HeaderComponent,},
   {path:'comments', component: CommentComponent},
   {path:'create', component: CreateComponent},
-  {path:'edit', component: EditComponent}
+  {path:'edit/:postId', component: EditComponent}
 ];
 
 @NgModule({

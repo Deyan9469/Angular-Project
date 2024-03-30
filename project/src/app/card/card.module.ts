@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardListComponent } from './card-list/card-list.component';
+import { DetailsComponent } from './details/details.component';
 
 
 
 @NgModule({
   declarations: [
-    CardListComponent
+    CardListComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule
