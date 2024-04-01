@@ -16,6 +16,7 @@ import { CreateComponent } from './create/create.component';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { FormsModule } from '@angular/forms';
 import { appInterceptorProvider } from './app.interceptor';
+import { dataInterceptorProvider } from './data.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { appInterceptorProvider } from './app.interceptor';
     UserModule,
     CardModule,
   ],
-  providers: [appInterceptorProvider],
+  providers: [appInterceptorProvider, dataInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

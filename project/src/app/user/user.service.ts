@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subscription, map, tap } from 'rxjs';
 import { User } from '../types/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -29,6 +29,8 @@ export class UserService {
       .pipe(map((user) => {
         localStorage.setItem('user', JSON.stringify(user));
         this.user$$.next(user);
+        this.getUserInfo(user.accessToken)
+
         return user;
       }));
   }
@@ -54,10 +56,12 @@ export class UserService {
     this.router.navigate(['/login']);
   }
 
-  getUserInfo() {
-    const user = this.user$$.value;
+  getUserInfo(token: string) {
+    console.log(token);
+    
+    const headers = new HttpHeaders().set('X-Authorization', token);
     return this.http
-      .get<User>(`${this.API_USER}/${user?.username}`)
+      .get<User>(`${this.API_USER}/me`, { headers })
       .pipe(tap((user) => this.user$$.next(user)));
   }
 
