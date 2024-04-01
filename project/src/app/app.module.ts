@@ -15,6 +15,7 @@ import { EditComponent } from './edit/edit.component';
 import { CreateComponent } from './create/create.component';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { FormsModule } from '@angular/forms';
+import { appInterceptorProvider } from './app.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { FormsModule } from '@angular/forms';
     UserModule,
     CardModule,
   ],
-  providers: [],
+  providers: [appInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
