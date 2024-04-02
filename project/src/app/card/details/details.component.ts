@@ -41,8 +41,8 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-  isAuth(post: Art) {
-    const isAuth: boolean = post._ownerId === this.user?._id
+  isAuth(_ownerId:string) {
+    const isAuth: boolean = _ownerId === this.user?._id
     return isAuth
   }
 

@@ -17,8 +17,8 @@
     align-items: center;
   
     .post {
-      width: 350px;
-      height: 660px;
+      width: 420px;
+      height: 80%;
       display: flex;
        overflow: hidden;
       flex-direction: column;
@@ -80,7 +80,7 @@
           }
   
           p {
-            font-size: 14px;
+            font-size: 18px;
             font-weight: normal;
           }
   
@@ -98,10 +98,10 @@
               flex-direction: column;
               text-transform: uppercase;
               letter-spacing: 1px;
-              font-size: 12px;
+              font-size: 13px;
   
               span {
-                font-size: 12px;
+                font-size: 14px;
                 text-transform: uppercase;
                 opacity: 0.5;
                 letter-spacing: 1px;

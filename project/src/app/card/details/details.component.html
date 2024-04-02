@@ -21,10 +21,11 @@
                         <span>tags</span>
                         <div class="tags">
                             <ul>
-                                <ng-container *ngIf="isLoggedIn && isAuth(post)">
+                                <ng-container *ngIf="isLoggedIn && isAuth(post._ownerId)">
                                 <li><a routerLink="/details/{{post._id}}/edit">edit</a></li>
                                 <li (click)="onDelete(post._id)">delete</li>
                                 </ng-container>
+                                
                                 <li routerLink="/">Home page</li>
                             </ul>
                         </div>
