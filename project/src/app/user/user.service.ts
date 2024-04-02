@@ -57,8 +57,6 @@ export class UserService {
   }
 
   getUserInfo(token: string) {
-    console.log(token);
-    
     const headers = new HttpHeaders().set('X-Authorization', token);
     return this.http
       .get<User>(`${this.API_USER}/me`, { headers })

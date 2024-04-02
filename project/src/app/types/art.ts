@@ -1,9 +1,9 @@
 export interface Art {
     title: string,
-    aritst: string,
+    artist: string,
     description: string,
     likes: string[],
     imageUrl: string,
-    ownerId: string,
+    _ownerId: string,
     _id: string,
 }
