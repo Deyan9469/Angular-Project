@@ -7,7 +7,6 @@ import { Art } from './types/art';
 })
 export class ApiService {
   API_ART = 'http://localhost:3030/data/art';
-  API_COMMENTS = 'http://localhost:3030/data/comments';
 
   constructor(private http: HttpClient) { }
 

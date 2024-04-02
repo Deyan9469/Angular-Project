@@ -1,1 +1,28 @@
-<p>comment works!</p>
+<div class="container">
+    <div class="row">
+        <h2 class="commentHeader">Comments</h2>
+    </div>
+    <hr />
+    <div class="row comment">
+
+        <div class="comment-container" *ngFor="let comment of comments">
+            <div class="head">
+                <small><strong class="user">{{comment.username}}</strong>data</small>
+            </div>
+            <p>{{comment.content}}</p>
+            <button class="del-button" *ngIf="comment._ownerId === user?._id" (click)="onDelete(comment._id)">Delete</button>
+        </div>
+        <div *ngIf="!lenght">
+            <p class="no-comment">No comments.</p>
+        </div>
+    </div>
+    <hr />
+    <div class="row" id="addcomment" *ngIf="isLoggedIn">
+        <label>Add new comment:</label>
+        <form class="form" #form="ngForm" (ngSubmit)="addComment(form)">
+            <textarea class="form-control" name="content" placeholder="Comment content..." ngModel
+                #inputContent="ngModel" required></textarea>
+            <button class="btn btn-primary">Send</button>
+        </form>
+    </div>
+</div>
