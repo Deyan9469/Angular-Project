@@ -7,7 +7,7 @@
 
         <div class="comment-container" *ngFor="let comment of comments">
             <div class="head">
-                <small><strong class="user">{{comment.username}}</strong>data</small>
+                <small><strong class="user">{{comment.username}}</strong></small>
             </div>
             <p>{{comment.content}}</p>
             <button class="del-button" *ngIf="comment._ownerId === user?._id" (click)="onDelete(comment._id)">Delete</button>
