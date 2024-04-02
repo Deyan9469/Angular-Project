@@ -8,7 +8,13 @@
       ngModel
       #inputEmail="ngModel"
       required
+      minlength="5"
       >
+      <ng-container>
+        <p class="error" *ngIf="inputEmail?.errors?.['required']">
+          The field is required.
+        </p>
+      </ng-container>
   
       <label for="psw"><b>Password</b></label>
       <input type="password" 
@@ -16,7 +22,14 @@
       placeholder="Enter Password"
       ngModel
       #inputPassword="ngModel"
-      required>
+      required
+      minlength="5"
+      >
+      <ng-container>
+        <p class="error" *ngIf="inputPassword?.errors?.['required']">
+          The field is required.
+        </p>
+      </ng-container>
   
       <button type="submit">Login</button>
     </div>
