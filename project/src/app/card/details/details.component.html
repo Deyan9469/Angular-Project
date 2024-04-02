@@ -16,17 +16,18 @@
                         <span>author</span>
                         {{post.artist}}
                     </div>
-
+                    
                     <div class="container_tags">
                         <span>tags</span>
                         <div class="tags">
                             <ul>
-                                <li>like</li>
+                                <ng-container *ngIf="isLoggedIn && isAuth(post)">
                                 <li><a routerLink="/details/{{post._id}}/edit">edit</a></li>
                                 <li (click)="onDelete(post._id)">delete</li>
+                                </ng-container>
+                                <li routerLink="/">Home page</li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>
