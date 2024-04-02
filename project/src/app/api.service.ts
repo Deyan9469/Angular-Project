@@ -30,4 +30,8 @@ export class ApiService {
 
     return this.http.put<Art>(`${this.API_ART}/${_id}`, payload);
   }
+
+  onDelete(_id:string){
+    return this.http.delete(`${this.API_ART}/${_id}`);
+  }
 }

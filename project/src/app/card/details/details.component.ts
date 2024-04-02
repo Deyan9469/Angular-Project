@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Art } from 'src/app/types/art';
 
@@ -9,17 +9,23 @@ import { Art } from 'src/app/types/art';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  art = {} as Art;
+  post = {} as Art;
 
-  constructor(private apiService: ApiService, private activeRoute: ActivatedRoute){}
+  constructor(private apiService: ApiService, private activeRoute: ActivatedRoute, private router: Router){}
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe((data) => {
       const id = data['postId'];
 
-      this.apiService.getOneArt(id).subscribe((art) => {
-        this.art = art;
+      this.apiService.getOneArt(id).subscribe((post) => {
+        this.post = post;
       });
+    });
+  }
+
+  onDelete(_id:string): void{
+    this.apiService.onDelete(_id).subscribe(()=>{
+      this.router.navigate(['/']);
     });
   }
 
