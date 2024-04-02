@@ -26,3 +26,6 @@ button:hover{
     background-color: rgb(42, 109, 243);
     color: aliceblue;
 }
+.error{
+    color: red;
+}
