@@ -1,1 +1,24 @@
-<p>edit works!</p>
+<section id="edit-page" class="auth">
+    <form id="edit" #form="ngForm" (ngSubmit)="editPost(form)">
+        <div class="card-container">
+            <h1>Edit your post</h1>
+            <label for="Title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter title..." ngModel #inputTitle="ngModel"
+                required />
+
+            <label for="artist">Artist</label>
+            <input type="text" id="artist" name="artist" placeholder="Enter artist..." ngModel #inputArtist="ngModel"
+                required />
+
+            <label for="imageUrl">Image Url</label>
+            <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter imageUrl" ngModel
+                #inputImageUrl="ngModel" required />
+
+            <label for="description">Description</label>
+            <textarea type="text" id="description" name="description" placeholder="description..." ngModel
+                #inputDescription="ngModel" required></textarea>
+
+            <button class="btn" type="submit">Edit Post</button>
+        </div>
+    </form>
+</section>

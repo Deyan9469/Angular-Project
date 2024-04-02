@@ -24,4 +24,10 @@ export class ApiService {
     const payload = { title, artist, imageUrl, description }
     return this.http.post<Art>(this.API_ART, payload);
   }
+
+  editPost(title: string, artist: string, imageUrl: string, description: string, _id: string) {
+    const payload = { title, artist, description, imageUrl }
+
+    return this.http.put<Art>(`${this.API_ART}/${_id}`, payload);
+  }
 }

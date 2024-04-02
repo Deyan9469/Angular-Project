@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Art } from '../types/art';
 import { ApiService } from '../api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-edit',
@@ -9,17 +10,30 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  posts = {} as Art;
+  post = {} as Art;
+  id: string = "";
 
-  constructor(private apiService: ApiService, private activeRoute: ActivatedRoute) { }
+  constructor(private apiService: ApiService, private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe((data) => {
-      const id = data['postId'];
-
-      this.apiService.getOneArt(id).subscribe((artPost) => {
-        this.posts = artPost;
+      this.id = data['postId'];
+      
+      this.apiService.getOneArt(this.id).subscribe((artPost) => {
+        this.post = artPost;
       });
+    })
+  }
+
+  editPost(form: NgForm): void {
+    if (form.invalid) {
+      return;
+    }
+
+    const { title, artist, imageUrl, description } = form.value;
+ 
+    this.apiService.editPost(title, artist, imageUrl, description, this.post._id).subscribe(() => {
+      this.router.navigate([`/details/${this.post._id}`]);
     })
   }
 }

@@ -1,0 +1,28 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 60px;
+    margin: 65px 0px;
+}
+input.btn.submit {
+    border: 1px solid;
+    margin: 0.5em 0;
+}
+.card-container input {
+    margin: 0.2em 0;
+}
+button {
+    border: 2px solid #24b4fb;
+    background-color: #24b4fb;
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 19px;
+    margin-top: 10px;
+}
+button:hover{
+    background-color: rgb(42, 109, 243);
+    color: aliceblue;
+}
