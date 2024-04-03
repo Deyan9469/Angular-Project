@@ -12,13 +12,16 @@ export class UserService {
 
   private user$$: BehaviorSubject<User | null>;
   public user$: Observable<User | null>;
-
-
+  user?: User | null;
 
   constructor(private http: HttpClient, private router: Router) {
     this.user$$ = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
     this.user$ = this.user$$.asObservable();
-
+    const user = this.user$.subscribe(x => this.user = x)
+  }
+  
+  get isLoggedIn(): boolean {
+    return !!this.user
   }
 
 

@@ -5,8 +5,10 @@
     <div class="col-lg-5">
         <h1 class="font-weight-light">Art Gallery from cool Artist</h1>
         <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, corporis?</p>
+        <ng-container *ngIf="isLoggedIn">
         <p> You can add a post of your work, just click the button!</p>
         <a class="btn btn-primary" routerLink="/create">Add Post</a>
+        </ng-container>
     </div>
 </div>
 
