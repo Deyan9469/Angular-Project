@@ -33,8 +33,8 @@
       </ng-container>
 
       <label for="description">Description</label>
-      <textarea type="text" id="description" name="description" placeholder="description..." ngModel
-        #inputDescription="ngModel" [(ngModel)]="post.description" required minlength="4" maxlength="30"></textarea>
+      <textarea type="text" id="description" name="description"  placeholder="description..." ngModel
+        #inputDescription="ngModel" [(ngModel)]="post.description" required minlength="4"></textarea>
 
       <ng-container *ngIf="inputDescription.touched">
         <p class="error" *ngIf="inputDescription?.errors?.['required']">
