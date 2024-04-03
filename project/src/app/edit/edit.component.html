@@ -1,44 +1,48 @@
 <section id="edit-page" class="auth">
-    <form id="edit" #form="ngForm" (ngSubmit)="editPost(form)">
-        <div class="card-container">
-            <h1>Edit your post</h1>
-            <label for="Title">Title</label>
-            <input type="text" id="title" name="title" placeholder="Enter title..." ngModel #inputTitle="ngModel"
-                required minlength="4"/>
-                <ng-container *ngIf="inputTitle.touched">
-                    <p class="error" *ngIf="inputTitle?.errors?.['required']">
-                      Input Title is required.
-                    </p>
-                  </ng-container>
+  <form id="edit" #form="ngForm" (ngSubmit)="editPost(form)">
+    <div class="card-container">
+      <h1>Edit your post</h1>
+      <label for="Title">Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter title..." ngModel #inputTitle="ngModel"
+        [(ngModel)]="post.title" required minlength="4" />
 
-            <label for="artist">Artist</label>
-            <input type="text" id="artist" name="artist" placeholder="Enter artist..." ngModel #inputArtist="ngModel"
-                required minlength="4"/>
-                <ng-container *ngIf="inputArtist.touched">
-                    <p class="error" *ngIf="inputArtist?.errors?.['required']">
-                      Input Artist is required.
-                    </p>
-                  </ng-container>
+      <ng-container *ngIf="inputTitle.touched">
+        <p class="error" *ngIf="inputTitle?.errors?.['required']">
+          Input Title is required.
+        </p>
+      </ng-container>
 
-            <label for="imageUrl">Image Url</label>
-            <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter imageUrl" ngModel
-                #inputImageUrl="ngModel" required minlength="10"/>
-                <ng-container *ngIf="inputImageUrl.touched">
-                    <p class="error" *ngIf="inputImageUrl?.errors?.['required']">
-                      Input Image Url is required.
-                    </p>
-                  </ng-container>
+      <label for="artist">Artist</label>
+      <input type="text" id="artist" name="artist" placeholder="Enter artist..." ngModel #inputArtist="ngModel"
+        [(ngModel)]="post.artist" required minlength="4" />
 
-            <label for="description">Description</label>
-            <textarea type="text" id="description" name="description" placeholder="description..." ngModel
-                #inputDescription="ngModel" required minlength="4" maxlength="30"></textarea>
-                <ng-container *ngIf="inputDescription.touched">
-                    <p class="error" *ngIf="inputDescription?.errors?.['required']">
-                      Input Description is required.
-                    </p>
-                  </ng-container>
+      <ng-container *ngIf="inputArtist.touched">
+        <p class="error" *ngIf="inputArtist?.errors?.['required']">
+          Input Artist is required.
+        </p>
+      </ng-container>
 
-            <button class="btn" type="submit">Edit Post</button>
-        </div>
-    </form>
+      <label for="imageUrl">Image Url</label>
+      <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter imageUrl" ngModel #inputImageUrl="ngModel"
+        [(ngModel)]="post.imageUrl" required minlength="10" />
+
+      <ng-container *ngIf="inputImageUrl.touched">
+        <p class="error" *ngIf="inputImageUrl?.errors?.['required']">
+          Input Image Url is required.
+        </p>
+      </ng-container>
+
+      <label for="description">Description</label>
+      <textarea type="text" id="description" name="description" placeholder="description..." ngModel
+        #inputDescription="ngModel" [(ngModel)]="post.description" required minlength="4" maxlength="30"></textarea>
+
+      <ng-container *ngIf="inputDescription.touched">
+        <p class="error" *ngIf="inputDescription?.errors?.['required']">
+          Input Description is required.
+        </p>
+      </ng-container>
+
+      <button class="btn" type="submit">Edit Post</button>
+    </div>
+  </form>
 </section>

@@ -29,3 +29,7 @@ button:hover{
 .error{
     color: red;
 }
+textarea{
+    width: 400px;
+    height: 130px;
+}
