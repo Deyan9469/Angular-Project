@@ -5,7 +5,7 @@
             <label for="Title">Title</label>
             <input type="text" id="title" name="title" placeholder="Enter title..." ngModel #inputTitle="ngModel"
                 required minlength="4"/>
-                <ng-container>
+                <ng-container *ngIf="inputTitle.touched">
                     <p class="error" *ngIf="inputTitle?.errors?.['required']">
                       Input Title is required.
                     </p>
@@ -14,7 +14,7 @@
             <label for="artist">Artist</label>
             <input type="text" id="artist" name="artist" placeholder="Enter artist..." ngModel #inputArtist="ngModel"
                 required minlength="4"/>
-                <ng-container>
+                <ng-container *ngIf="inputArtist.touched">
                     <p class="error" *ngIf="inputArtist?.errors?.['required']">
                       Input Artist is required.
                     </p>
@@ -23,7 +23,7 @@
             <label for="imageUrl">Image Url</label>
             <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter imageUrl" ngModel
                 #inputImageUrl="ngModel" required minlength="10"/>
-                <ng-container>
+                <ng-container *ngIf="inputImageUrl.touched">
                     <p class="error" *ngIf="inputImageUrl?.errors?.['required']">
                       Input Image Url is required.
                     </p>
@@ -32,7 +32,7 @@
             <label for="description">Description</label>
             <textarea type="text" id="description" name="description" placeholder="description..." ngModel
                 #inputDescription="ngModel" required minlength="4" maxlength="30"></textarea>
-                <ng-container>
+                <ng-container *ngIf="inputDescription.touched">
                     <p class="error" *ngIf="inputDescription?.errors?.['required']">
                       Input Description is required.
                     </p>
