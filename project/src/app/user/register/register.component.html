@@ -6,7 +6,7 @@
 
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" ngModel #inputEmail="ngModel" required
-      minlength="5" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      minlength="5" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$">
     <ng-container *ngIf="inputEmail.touched">
 
       <p class="error" *ngIf="inputEmail?.errors?.['required']">

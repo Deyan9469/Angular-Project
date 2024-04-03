@@ -9,7 +9,7 @@
       #inputEmail="ngModel"
       required
       minlength="5"
-      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+      pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$"
       >
       <ng-container *ngIf="inputEmail.touched">
         <p class="error" *ngIf="inputEmail?.errors?.['required']">
