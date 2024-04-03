@@ -21,8 +21,8 @@ export class CommentComponent implements OnInit{
 
   }
 
-  get lenght(): any{
-    return this.comments?.length
+  get lenght(): boolean{
+    return !!this.comments?.length
   }
 
   get isLoggedIn(): boolean {
