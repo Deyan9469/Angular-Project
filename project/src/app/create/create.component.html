@@ -10,6 +10,9 @@
                     <p class="error" *ngIf="inputTitle?.errors?.['required']">
                       Input Title is required.
                     </p>
+                    <p class="error" *ngIf="isWhitespace(inputTitle.value)">
+                      Title cannot contain only whitespace characters.
+                  </p>
                   </ng-container>
 
             <label for="artist">Artist</label>
@@ -20,6 +23,9 @@
                     <p class="error" *ngIf="inputArtist?.errors?.['required']">
                       Input Artist is required.
                     </p>
+                    <p class="error" *ngIf="isWhitespace(inputArtist.value)">
+                      Artist cannot contain only whitespace characters.
+                  </p>
                   </ng-container>
 
             <label for="imageUrl">Image Url</label>
@@ -30,6 +36,9 @@
                     <p class="error" *ngIf="inputImageUrl?.errors?.['required']">
                       Image Url is required.
                     </p>
+                    <p class="error" *ngIf="isWhitespace(inputImageUrl.value)">
+                      Image Url cannot contain only whitespace characters.
+                  </p>
                   </ng-container>
 
             <label for="description">Description</label>
@@ -40,6 +49,9 @@
                     <p class="error" *ngIf="inputDescription?.errors?.['required']">
                       Description is required.
                     </p>
+                    <p class="error" *ngIf="isWhitespace(inputDescription.value)">
+                      Description cannot contain only whitespace characters.
+                  </p>
                   </ng-container>
 
             <button class="btn" type="submit">Create Post</button>

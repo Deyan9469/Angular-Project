@@ -13,17 +13,30 @@ export class CreateComponent {
   constructor(private apiService: ApiService, private router: Router) { }
 
   addPost(form: NgForm): void {
-    if (form.invalid) {
+    let { title, artist, imageUrl, description } = form.value;
+
+    title = title.trim();
+    artist = artist.trim();
+    imageUrl = imageUrl.trim();
+    description = description.trim();
+    if (form.invalid || this.isWhitespace(title)
+      || this.isWhitespace(artist)
+      || this.isWhitespace(imageUrl)
+      || this.isWhitespace(description)) {
       return;
     }
-    const {title, artist, imageUrl, description} = form.value;
 
-    this.apiService.createPost(title, artist, imageUrl, description).subscribe(()=>{
+    this.apiService.createPost(title, artist, imageUrl, description).subscribe(() => {
       this.router.navigate(['/'])
     })
 
   }
+
+  isWhitespace(input: string): boolean {
+    return input.trim().length === 0;
+  }
 }
+
 
 
 
