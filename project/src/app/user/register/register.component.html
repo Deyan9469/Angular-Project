@@ -8,6 +8,7 @@
     <input type="text" placeholder="Enter Email" name="email" id="email" ngModel #inputEmail="ngModel" required
       minlength="5" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
     <ng-container *ngIf="inputEmail.touched">
+
       <p class="error" *ngIf="inputEmail?.errors?.['required']">
         Email is required.
       </p>
@@ -18,8 +19,9 @@
 
     <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" id="username" ngModel #inputUsername="ngModel"
-      required minlength="5">
-    <ng-container *ngIf="inputEmail.touched">
+      required minlength="3">
+
+    <ng-container *ngIf="inputUsername.touched">
       <p class="error" *ngIf="inputUsername?.errors?.['required']">
         Username is required.
       </p>
@@ -27,19 +29,24 @@
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="psw" ngModel #inputPassword="ngModel"
-      required minlength="5">
-    <ng-container *ngIf="inputEmail.touched">
+      required minlength="4">
+
+    <ng-container *ngIf="inputPassword.touched">
       <p class="error" *ngIf="inputPassword?.errors?.['required']">
         Password is required.
       </p>
     </ng-container>
-    
+
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="rePassword" id="psw-repeat" ngModel
-      #inputRePassword="ngModel" required minlength="5">
-    <ng-container *ngIf="inputEmail.touched">
+      #inputRePassword="ngModel" required minlength="4">
+
+    <ng-container *ngIf="inputRePassword.touched">
       <p class="error" *ngIf="inputRePassword?.errors?.['required']">
         Repeat Password is required.
+      </p>
+      <p class="error" *ngIf="inputRePassword.value !== inputPassword.value">
+        Repeat Password does not match password!
       </p>
     </ng-container>
     <hr>
