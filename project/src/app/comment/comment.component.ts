@@ -46,6 +46,7 @@ export class CommentComponent implements OnInit{
     const username = this.user?.username!;
 
     this.commentService.createComment(content, username, _ownerId).subscribe(()=>{
+      form.reset();
       this.ngOnInit();
     });
   }
