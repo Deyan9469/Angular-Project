@@ -20,7 +20,7 @@ The server that i'm useing is from "SoftUni" `practice server`
 Here is a link for it - https://github.com/softuni-practice-server/softuni-practice-server :octocat:
 
 1. User serice `http://localhost:3030/users`
-   ##`http://localhost:3030/users/register` - POST request
+   _`http://localhost:3030/users/register` - POST request
    ##`http://localhost:3030/users/login` - POST request
    ##`http://localhost:3030/users/logout` - GET request
 3. Collections service `http://localhost:3030/data`
