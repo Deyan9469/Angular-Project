@@ -23,6 +23,6 @@ Here is a link for it - https://github.com/softuni-practice-server/softuni-pract
    `http://localhost:3030/users/register` - POST request
    `http://localhost:3030/users/login` - POST request
    `http://localhost:3030/users/logout` - GET request
-2. Collections service `http://localhost:3030/data`
+3. Collections service `http://localhost:3030/data`
    `http://localhost:3030/data/art` - GET, POST, PUT, DELETE requests
-3. Comments service `http://localhost:3030/comments` - GET, POST, DELETE requests
+5. Comments service `http://localhost:3030/comments` - GET, POST, DELETE requests
