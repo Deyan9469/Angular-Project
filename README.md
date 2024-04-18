@@ -20,9 +20,9 @@ The server that i'm useing is from "SoftUni" `practice server`
 Here is a link for it - https://github.com/softuni-practice-server/softuni-practice-server :octocat:
 
 1. User serice `http://localhost:3030/users`
-   1.1. `http://localhost:3030/users/register` - POST request
-   1.2. `http://localhost:3030/users/login` - POST request
-   1.3. `http://localhost:3030/users/logout` - GET request
+   `http://localhost:3030/users/register` - POST request
+   `http://localhost:3030/users/login` - POST request
+   `http://localhost:3030/users/logout` - GET request
 2. Collections service `http://localhost:3030/data`
-   2.1 `http://localhost:3030/data/art` - GET, POST, PUT, DELETE requests
-3. Comments service http://localhost:3030/comments - GET, POST, DELETE requests
+   `http://localhost:3030/data/art` - GET, POST, PUT, DELETE requests
+3. Comments service `http://localhost:3030/comments` - GET, POST, DELETE requests
