@@ -18,13 +18,6 @@ and put likes on the art (but the functionality for that is "work in progress").
 The server that I'm using is from, "SoftUni" `[practice server]( https://github.com/softuni-practice-server/softuni-practice-server)` :octocat:. 
 <br> In addition, if you want to work on the project, the APIs for the server database are:
 
-1. User service `http://localhost:3030/users`
-   <br>`http://localhost:3030/users/register` - POST request
-   <br>`http://localhost:3030/users/login` - POST request
-   <br>`http://localhost:3030/users/logout` - GET request
-3. Collections service `http://localhost:3030/data`
-   <br>`http://localhost:3030/data/art` - GET, POST, PUT, DELETE requests
-5. Comments service `http://localhost:3030/comments` - GET, POST, DELETE requests
 
 | Service           | Endpoint                    | Requests      |
 |-------------------|-----------------------------|---------------|
