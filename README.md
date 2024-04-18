@@ -24,5 +24,5 @@ Here is a link for it - https://github.com/softuni-practice-server/softuni-pract
    <br>`http://localhost:3030/users/login` - POST request
    <br>`http://localhost:3030/users/logout` - GET request
 3. Collections service `http://localhost:3030/data`
-   `http://localhost:3030/data/art` - GET, POST, PUT, DELETE requests
+   <br>`http://localhost:3030/data/art` - GET, POST, PUT, DELETE requests
 5. Comments service `http://localhost:3030/comments` - GET, POST, DELETE requests
