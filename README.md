@@ -16,7 +16,7 @@ and put likes on the Art (but the functionality for that is work in progress).
 
 # Functionality :star:
 The server that i'm useing is from "SoftUni" `practice server` 
-Here is a link for it - https://github.com/softuni-practice-server/softuni-practice-server :octocat:
+<br> Here is a link for it - https://github.com/softuni-practice-server/softuni-practice-server :octocat:
 <br> In additional if you want to work on the project the api for the server data base are:
 
 1. User serice `http://localhost:3030/users`
