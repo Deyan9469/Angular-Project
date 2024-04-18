@@ -1,6 +1,6 @@
-# Introduction
+# Introduction :smile:
 Hello, this is my Project for Soft-Uni called Art Gallery
-# Start up
+# Start up :facepunch:
 To start the project you will need:
 
 1. Set 2 terminals - one for folder `project` and another in folder `server`
@@ -17,6 +17,7 @@ and put likes on the art (but the functionality for that is "work in progress").
 # Functionality :star:
 The server that I'm using is from, "SoftUni" [practice server]( https://github.com/softuni-practice-server/softuni-practice-server) . :octocat:. 
 <br> In addition, if you want to work on the project, the APIs for the server database are:
+<br>
 
 
 | Service           | Endpoint                    | Requests      |
@@ -27,6 +28,4 @@ The server that I'm using is from, "SoftUni" [practice server]( https://github.c
 |                   | `/logout`                     | GET           |
 | Collections Service | `http://localhost:3030/data` |               |
 |                     | `/art`                        | GET, POST, PUT, DELETE |
-| Comments Service  | `http://localhost:3030/comments` |             |
-|                   |                             | GET, POST, DELETE |
-
+| Comments Service  | `http://localhost:3030/comments` | GET, POST, DELETE |
