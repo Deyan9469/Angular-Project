@@ -12,18 +12,28 @@ From there Angular will generate <http://localhost:4200>, click it and view my p
 
 # Idea :art:
    <br> The idea of the project is for users to upload and view different art work by other people,
-and put likes on the art (but the functionality for that is work in progress).
+and put likes on the art (but the functionality for that is "work in progress").
 
 # Functionality :star:
-The server that I'm using is from "SoftUni," `practice server`. 
-<br> Here is a link for it - https://github.com/softuni-practice-server/softuni-practice-server :octocat:
+The server that I'm using is from, "SoftUni" `[practice server]( https://github.com/softuni-practice-server/softuni-practice-server)` :octocat:. 
+<br> In addition, if you want to work on the project, the APIs for the server database are:
 
-<br> In addition, if you want to work on the project, the APIs for the server data base are:
-
-1. User serice `http://localhost:3030/users`
+1. User service `http://localhost:3030/users`
    <br>`http://localhost:3030/users/register` - POST request
    <br>`http://localhost:3030/users/login` - POST request
    <br>`http://localhost:3030/users/logout` - GET request
 3. Collections service `http://localhost:3030/data`
    <br>`http://localhost:3030/data/art` - GET, POST, PUT, DELETE requests
 5. Comments service `http://localhost:3030/comments` - GET, POST, DELETE requests
+
+| Service           | Endpoint                    | Requests      |
+|-------------------|-----------------------------|---------------|
+| User Service      | `http://localhost:3030/users` |               |
+|                   | `/register`                   | POST          |
+|                   | `/login`                      | POST          |
+|                   | `/logout`                     | GET           |
+| Collections Service | `http://localhost:3030/data` |               |
+|                     | `/art`                        | GET, POST, PUT, DELETE |
+| Comments Service  | `http://localhost:3030/comments` |             |
+|                   |                             | GET, POST, DELETE |
+
