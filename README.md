@@ -1,4 +1,4 @@
-# Introduction :bowtie:
+# Introduction :blush:
 Hello, this is my Project for Soft-Uni called Art Gallery
 # Start up :facepunch:
 To start the project you will need:
