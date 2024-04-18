@@ -15,7 +15,7 @@ From there Angular will generate <http://localhost:4200>, click it and view my p
 and put likes on the art (but the functionality for that is "work in progress").
 
 # Functionality :star:
-The server that I'm using is from, "SoftUni" [practice server]( https://github.com/softuni-practice-server/softuni-practice-server) . :octocat:. 
+The server that I'm using is from, "SoftUni" [practice server]( https://github.com/softuni-practice-server/softuni-practice-server) :octocat:. 
 <br> In addition, if you want to work on the project, the APIs for the server database are:
 <br>
 
