@@ -14,8 +14,7 @@ To start the project you will need:
 From there Angular will generate <http://localhost:4200>, click it and view my project.
 
 # Idea :art:
-   <br> The idea of the project is for users to upload and view different art work by other people,
-and put likes on the art (but the functionality for that is "work in progress").
+   <br> The idea of the project is for users to upload and view different art work by other people.
 
 # Functionality :star:
 The server that I'm using is from, "SoftUni" [practice server]( https://github.com/softuni-practice-server/softuni-practice-server) :octocat:. 
