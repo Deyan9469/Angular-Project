@@ -1,5 +1,5 @@
 # Introduction :blush:
-Hello, this is my Project for Soft-Uni called Art Gallery
+Hello, this is my Project for Soft-Uni called Art Gallery, a user-friendly UI/UX application.
 
 https://github.com/Deyan9469/Angular-Project/assets/123094953/58cb69da-3efa-4e42-a868-72406cf2d666
 
