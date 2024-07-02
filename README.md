@@ -1,5 +1,8 @@
 # Introduction :blush:
 Hello, this is my Project for Soft-Uni called Art Gallery
+
+https://github.com/Deyan9469/Angular-Project/assets/123094953/58cb69da-3efa-4e42-a868-72406cf2d666
+
 # Start up :facepunch:
 To start the project you will need:
 
